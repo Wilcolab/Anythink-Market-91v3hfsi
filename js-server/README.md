@@ -66,3 +66,30 @@ app.get('/api/example', (req, res) => {
   res.json({ message: 'Hello World!' });
 });
 ```
+# Node.js Server and Migration
+
+We have introduced a new Node.js server alongside the Python FastAPI server. The Node.js server provides the same task management API routes and is implemented using Express.
+
+## Migration Details
+
+- The Node.js server code is located in `node-server/src/index.js`.
+- Dependencies for the Node.js server are listed in `node-server/package.json`.
+- A separate `node-server/Dockerfile` is provided for building the Node.js server image.
+- The `docker-compose.yml` file has been updated to include both the Python and Node.js servers as services.
+- Both servers expose the same API endpoints (`/tasks`) for adding and retrieving tasks.
+
+### Running the Node.js Server
+
+To run the Node.js server with Docker:
+
+```shell
+docker compose up
+```
+
+This will start both the Python and Node.js servers. You can access the Node.js server at port `3000`.
+
+### Migration Steps
+
+1. Update your client applications to point to the Node.js server endpoint (`http://localhost:3000/tasks`).
+2. Verify that the API contract remains consistent between both servers.
+3. Once migration is complete and stable, you may deprecate the Python FastAPI server if desired.
