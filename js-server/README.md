@@ -66,7 +66,7 @@ app.get('/api/example', (req, res) => {
   res.json({ message: 'Hello World!' });
 });
 ```
-# Node.js Server and Migration
+# Node.js Server and Migration details
 
 We have introduced a new Node.js server alongside the Python FastAPI server. The Node.js server provides the same task management API routes and is implemented using Express.
 
