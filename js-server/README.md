@@ -1,6 +1,14 @@
-# JavaScript Express Server
+# Node.js Express Server Migration
 
-A simple Express server with no endpoints, ready for development.
+This project now uses a new Node.js Express server, migrated from the previous implementation. The new setup is designed for improved maintainability and modern development workflows.
+
+## Migration Details
+
+- **Migrated to Node.js v18+** for better performance and long-term support.
+- **Updated dependencies** to the latest stable versions.
+- **Refactored server structure** for clarity and scalability.
+- **Improved Docker support** for consistent containerized deployments.
+- **Enhanced development experience** with ESLint, nodemon, and GitHub Actions integration.
 
 ## Features
 
@@ -8,12 +16,13 @@ A simple Express server with no endpoints, ready for development.
 - Nodemon for automatic server restart during development
 - Docker support for containerized deployment
 - Basic middleware setup (JSON and URL-encoded parsing)
+- ESLint for code quality
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js (v14 or higher)
+- Node.js (v18 or higher)
 - npm or yarn
 - Docker (optional, for containerized deployment)
 
@@ -66,3 +75,9 @@ app.get('/api/example', (req, res) => {
   res.json({ message: 'Hello World!' });
 });
 ```
+
+## Additional Notes
+
+- ESLint is pre-configured for code linting.
+- The dev container includes Docker CLI, GitHub CLI, Node.js, npm, and an SSH server for enhanced development workflows.
+- See `.devcontainer` documentation for more details on the development environment.
